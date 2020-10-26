@@ -1,7 +1,8 @@
-import string
-alphlow = list(string.ascii_lowercase)*2
-alphup = list(string.ascii_uppercase)*2
+
 def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
+    import string
+    alphlow = list(string.ascii_lowercase)*2
+    alphup = list(string.ascii_uppercase)*2
     ciphertext = ""
     for i in range(len(plaintext)):
         symb = ""
@@ -15,6 +16,9 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
         ciphertext += symb
     return ciphertext
 def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
+    import string
+    alphlow = list(string.ascii_lowercase)*2
+    alphup = list(string.ascii_uppercase)*2
     plaintext = ""
     for i in range(len(ciphertext)):
         symb = ""
@@ -27,10 +31,3 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
             symb = ciphertext[i]
         plaintext += symb
     return plaintext
-check = input('Если нужно зашифровать, введите "p", в другом случае введите "c": ')
-text = input('Введите текст: ')
-sh = int(input('Введите шаг: '))
-if check == 'p':
-    print(encrypt_caesar(text, sh))
-elif check == 'c':
-    print(decrypt_caesar(text, sh))
