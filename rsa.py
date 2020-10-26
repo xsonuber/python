@@ -58,6 +58,3 @@ def generate_keypair(p: int, q: int): #-> Tuple[Tuple[int, int], Tuple[int, int]
         g = gcd(e, phi)
     d = multiplicative_inverse(e, phi)
     return ((e, n), (d, n))
-
-pp, qq = map(int, input('Введите два простых числа "p" и "q" через пробел: ').split())
-print(generate_keypair(pp, qq))
