@@ -1,7 +1,8 @@
-import string
-alphlow = list(string.ascii_lowercase)*2
-alphup = list(string.ascii_uppercase)*2
+
 def encrypt_vigenere(plaintext: str, keyword: str) -> str:
+    import string
+    alphlow = list(string.ascii_lowercase)*2
+    alphup = list(string.ascii_uppercase)*2
     ciphertext = ""
     keyw = ""
     while len(plaintext) > len(keyw):
@@ -26,6 +27,9 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
     return ciphertext
 
 def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
+    import string
+    alphlow = list(string.ascii_lowercase)*2
+    alphup = list(string.ascii_uppercase)*2
     plaintext = ""
     keyw = ""
     while len(ciphertext) > len(keyw):
@@ -48,10 +52,3 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
             symb = ciphertext[i]
         plaintext += symb
     return plaintext
-check = input('Если нужно зашифровать, введите "p", в другом случае введите "c": ')
-text = input('Введите текст: ')
-kw = input('Введите кодовое слово: ')
-if check == 'p':
-    print(encrypt_vigenere(text, kw))
-elif check == 'c':
-    print(decrypt_vigenere(text, kw))
