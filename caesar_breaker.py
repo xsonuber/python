@@ -1,7 +1,8 @@
-import string
-alphlow = list(string.ascii_lowercase)*2
-alphup = list(string.ascii_uppercase)*2
+
 def decrypt_caesar(ciphertext: str, shift: int) -> str:
+    import string
+    alphlow = list(string.ascii_lowercase)*2
+    alphup = list(string.ascii_uppercase)*2
     plaintext = ""
     for i in range(len(ciphertext)):
         symb = ""
@@ -27,6 +28,3 @@ def caesar_breaker(ciphertext: str, dictionary) -> int:
         best_shift += 1
     best_shift -= 26
     return best_shift
-d = {} #у меня не получилось организовать ввод словаря с клавиатуры
-text = input("Введите зашифрованный текст: ")
-print(caesar_breaker(text, d))
