@@ -5,12 +5,14 @@ def is_prime(n: int) -> bool:
         if n % i == 0:
             check += 1
         i += 1
-    if check == 0 and n != 0:
+    if check == 0 and n != 0 and n != 1:
         return True
     else:
         return False
 
 def gcd(a: int, b:int) -> int:
+    if a == 0 or b == 0:
+        return 0
     while a != 0 and b != 0:
         x = max(a, b)
         y = min(a, b)
