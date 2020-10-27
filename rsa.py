@@ -11,8 +11,13 @@ def is_prime(n: int) -> bool:
         return False
 
 def gcd(a: int, b:int) -> int:
-    if a == 0 or b == 0:
+    if a == 0 and b == 0:
         return 0
+    else:
+        if a == 0:
+            return b
+        else:
+            return a
     while a != 0 and b != 0:
         x = max(a, b)
         y = min(a, b)
