@@ -16,7 +16,7 @@ def gcd(a: int, b:int) -> int:
     else:
         if a == 0:
             return b
-        else:
+        if b == 0:
             return a
     while a != 0 and b != 0:
         x = max(a, b)
